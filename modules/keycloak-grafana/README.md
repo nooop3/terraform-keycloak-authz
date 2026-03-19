@@ -9,17 +9,17 @@ module "keycloak_grafana_roles" {
   source  = "nooop3/authz/keycloak//modules/keycloak-grafana"
   version = "latest"
 
-  realm_id           = data.keycloak_realm.target.id
-  resource_server_id = keycloak_openid_client.grafana.resource_server_id
+  realm_id  = data.keycloak_realm.target.id
+  client_id = keycloak_openid_client.grafana.client_id
 }
 ```
 
-Assign these client roles to users or groups on the Grafana client.
+The module looks up the client and derives the UUIDs needed for client roles and the `keycloak_openid_user_client_role_protocol_mapper`.
 
 ## Inputs
 
 - `realm_id` (string, required): Realm identifier hosting the Grafana client.
-- `resource_server_id` (string, required): Grafana client/resource-server UUID.
+- `client_id` (string, required): Grafana Keycloak client ID.
 
 ## Outputs
 

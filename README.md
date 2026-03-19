@@ -34,8 +34,8 @@ module "keycloak_grafana_roles" {
   source  = "nooop3/authz/keycloak//modules/keycloak-grafana"
   version = "latest"
 
-  realm_id           = data.keycloak_realm.target.id
-  resource_server_id = keycloak_openid_client.grafana.resource_server_id
+  realm_id  = data.keycloak_realm.target.id
+  client_id = keycloak_openid_client.grafana.client_id
 }
 ```
 

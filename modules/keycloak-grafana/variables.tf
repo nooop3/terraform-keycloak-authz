@@ -3,7 +3,7 @@ variable "realm_id" {
   type        = string
 }
 
-variable "resource_server_id" {
-  description = "ID (UUID) of the Keycloak OIDC client / resource server Grafana uses."
+variable "client_id" {
+  description = "Client ID of the Keycloak client Grafana uses."
   type        = string
 }
